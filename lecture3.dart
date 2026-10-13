@@ -1,14 +1,10 @@
------task1----
-
-  void main() {
+void main() {
+  // -----task1----
   int n = -4;
 
   if (n % 2 == 0) {
-
     print("Even");
-
-  }
-  else {
+  } else {
     print("Odd");
   }
 
@@ -16,33 +12,22 @@
     print("Negative number");
   }
 
+  // ----task2-----
+  int task2N = 15; 
 
----task2-----
-
-  int n = 15;
-
-  for (int i = 1; i <= n; i++) {
-
+  for (int i = 1; i <= task2N; i++) {
     if (i % 3 == 0 && i % 5 == 0) {
       print("FizzBuzz");
-    }
-
-    else if (i % 3 == 0) {
+    } else if (i % 3 == 0) {
       print("Fizz");
-    }
-
-    else if (i % 5 == 0) {
+    } else if (i % 5 == 0) {
       print("Buzz");
-    }
-
-    else {
+    } else {
       print(i);
     }
   }
 
-
----task3---
-
+  // ---task3---
   List<int> numbers = [12, 5, 8, 21, 4, 15, 10];
 
   int sum = 0;
@@ -81,9 +66,7 @@
   print("Number of even elements = $evenCount");
   print("Numbers > 10 = $greaterThanTen");
 
-
-----task4----
-  
+  // ----task4----
   Map<String, double> studentGrades = {
     "Ahmed": 85,
     "Mohamed": 45,
@@ -100,9 +83,7 @@
   print("--- Student Grades Report ---");
 
   studentGrades.forEach((name, grade) {
-
     String status = (grade >= 50) ? "Pass" : "Fail";
-
     print("Student: $name, Grade: $grade -> $status");
 
     totalGrades += grade;
@@ -124,9 +105,7 @@
   print("Highest Grade Student: $topStudent with grade $highestGrade");
   print("Number of students passed = $passedCount");
 
-
-----task5----
-
+  // ----task5----
   double num1 = 20;
   double num2 = 0;
   String operation = "/";
@@ -164,9 +143,7 @@
       print("Invalid operation");
   }
 
-
-----task6---
-
+  // ----task6---
   List<Map<String, dynamic>> cart = [
     {"name": "Phone", "price": 10000.0, "quantity": 2},
     {"name": "Tv", "price": 20000.0, "quantity": 3},
@@ -187,14 +164,12 @@
 
     double itemTotal = price * quantity;
     totalCartCost += itemTotal;
-
     totalItemsCount += quantity;
 
     print("Product: $name | Price: $price | Quantity: $quantity | Total: $itemTotal");
   }
 
   print("\n---------------------------------");
-
   print("Total Cart Cost = $totalCartCost");
 
   double finalTotal = totalCartCost;
@@ -207,12 +182,9 @@
   }
 
   print("Final Total After Discount = $finalTotal");
-
   print("Total number of items in cart = $totalItemsCount");
 
-
----task7---
-
+  // ---task7---
   List<Map<String, dynamic>> students = [
     {
       "name": "Ahmed",
@@ -232,16 +204,14 @@
     },
   ];
 
-  print("'''' Part A & B: System Reports ''''");
+  print("\n'''' Part A & B: System Reports ''''");
 
   double totalClassSum = 0;
-  String topStudent = "";
   double highestAverage = -1;
-
   String lowestStudent = "";
   double lowestAverage = 999;
-
-  int passedCount = 0;
+  String task7TopStudent = "";
+  int task7PassedCount = 0;
   List<String> excellentStudents = [];
 
   for (var student in students) {
@@ -261,7 +231,6 @@
     double average = sum / grades.length;
     totalClassSum += average;
 
-
     String status = "";
     if (average >= 85) {
       status = "Excellent";
@@ -277,7 +246,7 @@
 
     if (average > highestAverage) {
       highestAverage = average;
-      topStudent = name;
+      task7TopStudent = name;
     }
 
     if (average < lowestAverage) {
@@ -286,7 +255,7 @@
     }
 
     if (average >= 50) {
-      passedCount++;
+      task7PassedCount++;
     }
 
     if (allAbove80) {
@@ -294,13 +263,13 @@
     }
   }
 
-  double classAverage = totalClassSum / students.length;
+  double task7ClassAverage = totalClassSum / students.length;
 
   print("\n--- Additional Statistics ---");
-  print("Class Average = ${classAverage.toStringAsFixed(2)}");
-  print("Top Student: $topStudent with average $highestAverage");
+  print("Class Average = ${task7ClassAverage.toStringAsFixed(2)}");
+  print("Top Student: $task7TopStudent with average $highestAverage");
   print("Lowest Student: $lowestStudent with average $lowestAverage");
-  print("Number of students passed = $passedCount");
+  print("Number of students passed = $task7PassedCount");
   print("Students with >= 80 in every subject = $excellentStudents");
 
   // ==================== Part C: Search Feature ====================
@@ -334,10 +303,10 @@
       print("Action: Print all students.");
       break;
     case 2:
-      print("Action: Show class average (${classAverage.toStringAsFixed(2)}).");
+      print("Action: Show class average (${task7ClassAverage.toStringAsFixed(2)}).");
       break;
     case 3:
-      print("Action: Show top student ($topStudent).");
+      print("Action: Show top student ($task7TopStudent).");
       break;
     case 4:
       print("Action: Search for a student ($searchName).");
